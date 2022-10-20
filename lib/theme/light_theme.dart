@@ -15,11 +15,6 @@ ThemeData lightTheme = ThemeData(
   iconTheme: IconThemeData(
     color: Constants.mainColor,
   ),
-  cardTheme: CardTheme(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
-    ),
-  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: Constants.mainColor,
