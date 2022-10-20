@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:tatware/modules/home_module/home_view.dart';
 
 import '../index.dart';
 import '../modules/getStart_module/getStart_view.dart';
@@ -22,6 +23,12 @@ final GoRouter router = GoRouter(
       path: Routes.GetStart,
       builder: (BuildContext context, GoRouterState state) {
         return GetStartView();
+      },
+    ),
+    GoRoute(
+      path: Routes.Home,
+      builder: (BuildContext context, GoRouterState state) {
+        return HomeView();
       },
     ),
   ],
