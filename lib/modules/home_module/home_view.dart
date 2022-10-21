@@ -43,7 +43,6 @@ class HomeView extends StatelessWidget {
           grabbing: GrabbingWidget(),
           grabbingHeight: 4.h,
           lockOverflowDrag: true,
-          sheetAbove: null,
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: Column(
@@ -126,10 +125,16 @@ class HomeView extends StatelessWidget {
                                           ),
                                           Spacer(),
                                           IconButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              recommendedExpert.isFavorite =
+                                                  !recommendedExpert.isFavorite;
+                                              cubit.emit(
+                                                  HomeChangeFavoriteState());
+                                            },
                                             icon: Icon(
-                                              Icons.favorite,
-                                              color: Colors.grey,
+                                              recommendedExpert.isFavorite
+                                                  ? Icons.favorite
+                                                  : Icons.favorite_outline,
                                             ),
                                           ),
                                         ],

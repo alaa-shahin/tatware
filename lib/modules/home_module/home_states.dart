@@ -13,3 +13,5 @@ class HomeGetOnlineExpertsState extends HomeStates {}
 class HomeCategoryLoadingState extends HomeStates {}
 
 class HomeGetCategoryState extends HomeStates {}
+
+class HomeChangeFavoriteState extends HomeStates {}

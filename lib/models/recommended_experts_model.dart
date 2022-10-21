@@ -4,6 +4,7 @@ class RecommendedExperts {
   double? rate;
   String? image;
   String? id;
+  late bool isFavorite;
 
   RecommendedExperts({
     this.name,
@@ -11,6 +12,7 @@ class RecommendedExperts {
     this.rate,
     this.image,
     this.id,
+    this.isFavorite = false,
   });
 
   RecommendedExperts.fromJson(Map<String, dynamic> json) {
@@ -19,6 +21,7 @@ class RecommendedExperts {
     rate = json['rate'];
     image = json['image'];
     id = json['id'];
+    isFavorite = json['isFavorite'];
   }
 
   Map<String, dynamic> toJson() {
@@ -28,6 +31,7 @@ class RecommendedExperts {
     data['rate'] = this.rate;
     data['image'] = this.image;
     data['id'] = this.id;
+    data['isFavorite'] = this.isFavorite;
     return data;
   }
 }
