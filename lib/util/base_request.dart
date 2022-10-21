@@ -9,6 +9,7 @@ import '../../../index.dart';
 import '../../util/constants.dart';
 import '../global_widget/loading_widget.dart';
 import '../global_widget/no_network_widget.dart';
+import '../main.dart';
 
 class BaseRequest {
   static Future<dynamic> dynamicRequest({
@@ -20,7 +21,11 @@ class BaseRequest {
     WidgetsBinding.instance.addPostFrameCallback((s) async {
       var connectivityResult = await Connectivity().checkConnectivity();
       if (connectivityResult == ConnectivityResult.none) {
-        NoNetworkWidget();
+        navigatorKey.currentState!.pushReplacement(
+          MaterialPageRoute(
+            builder: (BuildContext context) => NoNetworkWidget(),
+          ),
+        );
         return;
       }
       if (showDialog) {

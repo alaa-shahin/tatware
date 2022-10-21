@@ -7,6 +7,8 @@ void main() {
   runApp(MyApp());
 }
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: lightTheme,
           routes: routes,
+          navigatorKey: navigatorKey,
           initialRoute: Routes.Welcome,
           themeMode: ThemeMode.light,
           supportedLocales: S.delegate.supportedLocales,
