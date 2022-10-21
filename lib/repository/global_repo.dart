@@ -1,6 +1,7 @@
 import 'package:tatware/util/base_request.dart';
 
 import '../models/category_model.dart';
+import '../models/chat_model.dart';
 import '../models/online_experts_model.dart';
 import '../models/recommended_experts_model.dart';
 
@@ -36,5 +37,16 @@ class GlobalRepo {
         ? []
         : List<CategoryModel>.from(
             response.map((e) => CategoryModel.fromJson(e)));
+  }
+
+  /// get chat messages
+
+  Future<List<ChatModel>?> getChatMessages() async {
+    var response = await BaseRequest.dynamicRequest(
+      path: 'chat',
+    );
+    return response == null
+        ? []
+        : List<ChatModel>.from(response.map((e) => ChatModel.fromJson(e)));
   }
 }
