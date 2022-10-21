@@ -69,6 +69,7 @@ class HomeView extends StatelessWidget {
                     }
                   },
                   builder: (context, state) {
+                    var cubit = HomeCubit.get(context);
                     return Container(
                       height: 34.h,
                       child: ListView.separated(
@@ -81,7 +82,7 @@ class HomeView extends StatelessWidget {
                         },
                         itemBuilder: (context, index) {
                           var recommendedExpert =
-                              HomeCubit.get(context).recommendedModel![index];
+                              cubit.recommendedModel![index];
                           return Container(
                             width: 48.w,
                             decoration: BoxDecoration(
@@ -178,6 +179,7 @@ class HomeView extends StatelessWidget {
                     }
                   },
                   builder: (context, state) {
+                    var cubit = HomeCubit.get(context);
                     return Container(
                       height: 15.h,
                       child: ListView.separated(
@@ -188,8 +190,7 @@ class HomeView extends StatelessWidget {
                           return addHorizontalSpace(5);
                         },
                         itemBuilder: (context, index) {
-                          var onlineExpert =
-                              HomeCubit.get(context).onlineExperts![index];
+                          var onlineExpert = cubit.onlineExperts![index];
                           return Column(
                             children: [
                               Stack(
@@ -199,18 +200,19 @@ class HomeView extends StatelessWidget {
                                         NetworkImage(onlineExpert.image!),
                                     radius: 4.h,
                                   ),
-                                  PositionedDirectional(
-                                    start: 12.w,
-                                    child: CircleAvatar(
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle,
+                                  if (onlineExpert.isOnline)
+                                    PositionedDirectional(
+                                      start: 12.w,
+                                      child: CircleAvatar(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Colors.green,
+                                            shape: BoxShape.circle,
+                                          ),
                                         ),
+                                        radius: 1.w,
                                       ),
-                                      radius: 1.w,
                                     ),
-                                  ),
                                 ],
                               ),
                               addVerticalSpace(2),

@@ -16,10 +16,10 @@ var textTheme = TextTheme(
     fontWeight: FontWeight.bold,
   ),
   subtitle1: TextStyle(
-    color: Constants.mainColor,
+    color: Colors.white,
   ),
   subtitle2: TextStyle(
-    color: Constants.mainColor,
+    color: Colors.white,
     fontWeight: FontWeight.bold,
   ),
   bodyText2: TextStyle(

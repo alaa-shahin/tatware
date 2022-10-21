@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) => OKToast(
         position: ToastPosition.center,
-        child: MaterialApp.router(
+        child: MaterialApp(
           title: 'Tatware Demo',
           debugShowCheckedModeBanner: false,
-          routerConfig: router,
           theme: lightTheme,
+          routes: routes,
+          initialRoute: Routes.Welcome,
           themeMode: ThemeMode.light,
           supportedLocales: S.delegate.supportedLocales,
           localizationsDelegates: [

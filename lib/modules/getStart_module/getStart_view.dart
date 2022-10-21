@@ -1,4 +1,3 @@
-import 'package:go_router/go_router.dart';
 import 'package:tatware/index.dart';
 
 import '../../routes/app_routes.dart';
@@ -51,7 +50,7 @@ class GetStartView extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(fixedSize: Size(40.w, 7.h)),
               onPressed: () {
-                context.go(Routes.Home);
+                Navigator.pushNamed(context, Routes.Chat);
               },
               child: Text('Next'),
             ),

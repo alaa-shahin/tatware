@@ -1,4 +1,3 @@
-import 'package:go_router/go_router.dart';
 import 'package:tatware/util/constants.dart';
 
 import '../../index.dart';
@@ -27,7 +26,7 @@ class WelcomeView extends StatelessWidget {
               Spacer(),
               ElevatedButton(
                 onPressed: () {
-                  context.go(Routes.GetStart);
+                  Navigator.pushNamed(context, Routes.GetStart);
                 },
                 child: Text('Get Started'),
               ),

@@ -1,10 +1,15 @@
 class OnlineExperts {
   String? name;
   String? image;
-  bool? isOnline;
+  late bool isOnline;
   String? id;
 
-  OnlineExperts({this.name, this.image, this.isOnline, this.id});
+  OnlineExperts({
+    this.name,
+    this.image,
+    this.isOnline = false,
+    this.id,
+  });
 
   OnlineExperts.fromJson(Map<String, dynamic> json) {
     name = json['name'];
